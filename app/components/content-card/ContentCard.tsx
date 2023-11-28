@@ -36,7 +36,7 @@ export const ContentCard = (props: ContentCardProps) => {
         {props.length && (
           <div className="absolute bottom-2 right-2 z-10 inline-flex items-center gap-1 rounded-full bg-[#000000B2] px-2 py-1 text-xs text-white">
             <TimeIcon />
-            <span className="text-xs font-bold">{props.length}m</span>
+            <span className="text-xs font-bold">{length}m</span>
           </div>
         )}
       </Box>
