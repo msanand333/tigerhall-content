@@ -2,9 +2,9 @@ import React from 'react';
 
 export type contentCardProps = {
   imgUrl: string;
-  heading: string;
-  subheading: string;
+  type: string;
+  title: string;
 };
-export const ContentView = () => {
+export const ContentView = (props: contentCardProps[]) => {
   return <div>ContentView</div>;
 };
