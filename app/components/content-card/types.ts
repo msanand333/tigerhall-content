@@ -3,4 +3,5 @@ export type ContentCardProps = {
   imageSrc: string;
   ownerName: string;
   ownerTitle?: string;
+  length?: number;
 };

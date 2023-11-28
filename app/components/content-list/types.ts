@@ -8,6 +8,7 @@ export type ContentCardApiResponse = {
     lastName: string;
     title: string;
   }[];
+  length?: number;
 };
 
 export type ContentListProps = {

@@ -11,6 +11,7 @@ export const ContentList = ({ contentCards }: ContentListProps) => {
       imageSrc={content.image.uri}
       ownerName={content?.experts[0]?.firstName}
       ownerTitle={content?.experts[0]?.title}
+      length={content.length}
     />
   ));
 };

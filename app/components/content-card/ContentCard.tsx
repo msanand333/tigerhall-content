@@ -3,13 +3,28 @@ import React from "react";
 import { ContentCardProps } from "./types";
 import { ShareIcon } from "../Icons/ShareIcon";
 import { BookmarkIcon } from "../Icons/BookmarkIcon";
+import { TimeIcon } from "@chakra-ui/icons";
 
 export const ContentCard = (props: ContentCardProps) => {
-  const { title = "", imageSrc = "", ownerName = "", ownerTitle = "" } = props;
+  const {
+    title = "",
+    imageSrc = "",
+    ownerName = "",
+    ownerTitle = "",
+    length,
+  } = props;
 
   return (
-    <div className="w-[244px] rounded-lg text-white">
-      <Box width="100%" height="120px" borderTopRadius="8px">
+    <div className="w-[244px]  rounded-lg text-white">
+      <Box
+        as="a"
+        href="javascipt:void(0)"
+        display="block"
+        width="100%"
+        height="120px"
+        borderTopRadius="8px"
+        position="relative"
+      >
         <Image
           width="100%"
           height="100%"
@@ -18,6 +33,12 @@ export const ContentCard = (props: ContentCardProps) => {
           objectFit="cover"
           borderTopRadius="8px"
         />
+        {props.length && (
+          <div className="absolute bottom-2 right-2 z-10 inline-flex items-center gap-1 rounded-full bg-[#000000B2] px-2 py-1 text-xs text-white">
+            <TimeIcon />
+            <span className="text-xs font-bold">{props.length}m</span>
+          </div>
+        )}
       </Box>
       <Box
         width={"100%"}

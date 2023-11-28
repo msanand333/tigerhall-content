@@ -20,7 +20,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   }, [keywords, onSearch]);
 
   return (
-    <InputGroup maxW="md" bg="#383733" borderRadius="4px">
+    <InputGroup maxW="244px" w="100%" bg="#383733" borderRadius="4px">
       <InputLeftElement pointerEvents="none">
         <SearchIcon color="white" />
       </InputLeftElement>

@@ -1,48 +1,92 @@
 @font-face {
-  font-family: 'PP Neue Montreal';
+  font-family: "PP Neue Montreal";
   font-style: italic;
   font-weight: 400;
-  src: local('PP Neue Montreal Italic'),
-    url('./assets/fonts/PP-Neue-Montreal/ppneuemontreal-italic.woff')
-      format('woff');
+  src:
+    local("PP Neue Montreal Italic"),
+    url("./assets/fonts/PP-Neue-Montreal/ppneuemontreal-italic.woff")
+      format("woff");
 }
 
 @font-face {
-  font-family: 'PP Neue Montreal ';
+  font-family: "PP Neue Montreal ";
   font-style: normal;
   font-weight: 400;
-  src: local('PP Neue Montreal Thin'),
-    url('./assets/fonts/PP-Neue-Montreal/ppneuemontreal-thin.woff')
-      format('woff');
+  src:
+    local("PP Neue Montreal Thin"),
+    url("./assets/fonts/PP-Neue-Montreal/ppneuemontreal-thin.woff")
+      format("woff");
 }
 
 @font-face {
-  font-family: 'PP Neue Montreal';
+  font-family: "PP Neue Montreal";
   font-style: normal;
   font-weight: 500;
-  src: local('PP Neue Montreal Medium'),
-    url('./assets/fonts/PP-Neue-Montreal/ppneuemontreal-medium.woff')
-      format('woff');
+  src:
+    local("PP Neue Montreal Medium"),
+    url("./assets/fonts/PP-Neue-Montreal/ppneuemontreal-medium.woff")
+      format("woff");
 }
 
 @font-face {
-  font-family: 'PP Neue Montreal';
+  font-family: "PP Neue Montreal";
   font-style: italic;
   font-weight: 600;
-  src: local('PP Neue Montreal SemiBold italic'),
-    url('./assets/fonts/PP-Neue-Montreal/ppneuemontreal-semibolditalic.woff')
-      format('woff');
+  src:
+    local("PP Neue Montreal SemiBold italic"),
+    url("./assets/fonts/PP-Neue-Montreal/ppneuemontreal-semibolditalic.woff")
+      format("woff");
 }
 
 @font-face {
-  font-family: 'PP Neue Montreal';
+  font-family: "PP Neue Montreal";
   font-style: normal;
   font-weight: 700;
-  src: local('PP Neue Montreal Bold'),
-    url('./assets/fonts/PP-Neue-Montreal/ppneuemontreal-bold.woff')
-      format('woff');
+  src:
+    local("PP Neue Montreal Bold"),
+    url("./assets/fonts/PP-Neue-Montreal/ppneuemontreal-bold.woff")
+      format("woff");
 }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .loader {
+    @apply relative block h-5 w-[140px] animate-[pgfill_1s_linear_infinite] bg-[linear-gradient(#FFF_20px,transparent_0),linear-gradient(#FFF_20px,transparent_0),linear-gradient(#FFF_20px,transparent_0),linear-gradient(#FFF_20px,transparent_0)] bg-[20px_auto] bg-[0_0,40px_0,80px_0,120px_0] bg-no-repeat;
+  }
+}
+
+@keyframes pgfill {
+  0% {
+    background-image: linear-gradient(#fff 20px, transparent 0),
+      linear-gradient(#fff 20px, transparent 0),
+      linear-gradient(#fff 20px, transparent 0),
+      linear-gradient(#fff 20px, transparent 0);
+  }
+  25% {
+    background-image: linear-gradient(#ff3d00 20px, transparent 0),
+      linear-gradient(#fff 20px, transparent 0),
+      linear-gradient(#fff 20px, transparent 0),
+      linear-gradient(#fff 20px, transparent 0);
+  }
+  50% {
+    background-image: linear-gradient(#ff3d00 20px, transparent 0),
+      linear-gradient(#ff3d00 20px, transparent 0),
+      linear-gradient(#fff 20px, transparent 0),
+      linear-gradient(#fff 20px, transparent 0);
+  }
+  75% {
+    background-image: linear-gradient(#ff3d00 20px, transparent 0),
+      linear-gradient(#ff3d00 20px, transparent 0),
+      linear-gradient(#ff3d00 20px, transparent 0),
+      linear-gradient(#fff 20px, transparent 0);
+  }
+  100% {
+    background-image: linear-gradient(#ff3d00 20px, transparent 0),
+      linear-gradient(#ff3d00 20px, transparent 0),
+      linear-gradient(#ff3d00 20px, transparent 0),
+      linear-gradient(#ff3d00 20px, transparent 0);
+  }
+}

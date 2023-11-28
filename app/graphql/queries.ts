@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const GET_CONTENT_CARDS = gql`
   query GetContentCards($keywords: String) {
@@ -22,6 +22,7 @@ export const GET_CONTENT_CARDS = gql`
           experts {
             ...Expert
           }
+          length
         }
         ... on Stream {
           name

@@ -6,6 +6,7 @@ import { GET_CONTENT_CARDS } from "../graphql/queries";
 import { LoadingAnimation } from "./loading-animation/LoadingAnimation";
 import { SearchBar } from "./search-bar/SearchBar";
 import { ContentList } from "./content-list/ContentList";
+import { NoData } from "./no-data/NoData";
 
 export const App: React.FC = () => {
   const [searchKeywords, setSearchKeywords] = useState("");
@@ -35,14 +36,16 @@ export const App: React.FC = () => {
 
   return (
     <>
-      <div className="mb-4 flex items-center justify-center">
+      <div className="fixed left-0 top-0 z-20 flex w-full items-center justify-center bg-inherit py-8">
         <SearchBar onSearch={handleSearch} />
       </div>
-      <div className="container m-auto flex flex-wrap justify-center gap-4">
+      <div className="container m-auto flex flex-wrap justify-center gap-8 pt-32">
         {loading ? (
           <LoadingAnimation />
-        ) : (
+        ) : contentCards.length !== 0 ? (
           <ContentList contentCards={contentCards} />
+        ) : (
+          <NoData />
         )}
       </div>
     </>
