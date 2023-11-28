@@ -2,9 +2,7 @@
 import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
 import React from 'react';
 import { SearchIcon } from '@chakra-ui/icons';
-type SearchBarProps = {
-  onSearch: (keywords: string) => void;
-};
+import { SearchBarProps } from './types';
 
 export const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [keywords, setKeywords] = React.useState('');

@@ -1,21 +1,13 @@
-// ContentCard.tsx
-
 import { Image } from '@chakra-ui/react';
 import React from 'react';
+import { ContentCardProps } from './types';
 
-type ContentCardProps = {
-  name: string;
-  imageUri: string;
-};
-
-export const ContentCard: React.FC<ContentCardProps> = ({ name, imageUri }) => {
-  console.log(name, imageUri);
+export const ContentCard = (props: ContentCardProps) => {
+  const { name = '', image = '' } = props;
   return (
-    <div>
-      <Image src={imageUri} alt={name} />
-      {/* <img src={imageUri} alt={name} /> */}
+    <div className='w-[244px] rounded-lg'>
+      <Image src={image} alt={name} />
       <h3>{name}</h3>
-      {/* Add other content details */}
     </div>
   );
 };

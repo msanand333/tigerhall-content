@@ -4,9 +4,9 @@ export const GET_CONTENT_CARDS = gql`
   query GetContentCards($keywords: String) {
     contentCards(
       filter: {
-        limit: 200
+        limit: 50
         keywords: $keywords
-        types: [PODCAST, EBOOK, EVENT, STREAM, LEARNING_PATH]
+        types: [PODCAST, EBOOK, EVENT, STREAM]
       }
     ) {
       meta {

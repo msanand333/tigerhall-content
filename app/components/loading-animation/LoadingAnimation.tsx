@@ -1,9 +1,5 @@
-// LoadingAnimation.tsx
 import React from 'react';
 
-const LoadingAnimation: React.FC = () => {
-  // Add your creative loading animation here
+export const LoadingAnimation: React.FC = () => {
   return <div>Loading...</div>;
 };
-
-export default LoadingAnimation;

@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { GET_CONTENT_CARDS } from '../graphql/queries';
-import { ContentCard } from './content-card/ContentCard';
 import { LoadingAnimation } from './loading-animation/LoadingAnimation';
 import { SearchBar } from './search-bar/SearchBar';
+import { ContentList } from './content-list/ContentList';
 
 export const App: React.FC = () => {
   const [searchKeywords, setSearchKeywords] = useState('');
@@ -24,32 +24,24 @@ export const App: React.FC = () => {
   );
 
   useEffect(() => {
-    // Add your debounce logic here (300 ms debounce)
-    const debounceTimer = setTimeout(() => {
+    const debounceTimer: NodeJS.Timeout = setTimeout(() => {
       handleSearch(searchKeywords);
     }, 300);
 
     return () => clearTimeout(debounceTimer);
   }, [searchKeywords, handleSearch]);
 
-  if (loading) {
-    return <LoadingAnimation />;
-  }
-
-  // Make sure data is structured correctly
   const contentCards = data?.contentCards?.edges || [];
-  console.log(contentCards);
+
   return (
     <div>
       <SearchBar onSearch={handleSearch} />
       <div>
-        {contentCards.map((content: any) => (
-          <ContentCard
-            key={content.id}
-            name={content.name}
-            imageUri={content.image.uri}
-          />
-        ))}
+        {loading ? (
+          <LoadingAnimation />
+        ) : (
+          <ContentList contentCards={contentCards} />
+        )}
       </div>
     </div>
   );
