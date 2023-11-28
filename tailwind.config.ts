@@ -33,7 +33,7 @@ const config: Config = {
         montreal: ['PP Neue Montreal', 'sans-serif'],
       },
       colors: {
-        brand: {
+        'brand': {
           main: '#FF5900',
           secondary: {
             soSunny: '#f78104',
@@ -44,6 +44,8 @@ const config: Config = {
             white: '#ffffff',
           },
         },
+        'grey-700': '#797670',
+        'grey-800': '#4D4B46',
       },
     },
   },

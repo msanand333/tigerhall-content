@@ -12,7 +12,7 @@ export default function Home() {
     <ApolloProvider client={client}>
       <CacheProvider>
         <ChakraProvider>
-          <main>
+          <main className='p-4'>
             <App />
           </main>
         </ChakraProvider>

@@ -19,6 +19,9 @@ export const GET_CONTENT_CARDS = gql`
           image {
             ...Image
           }
+          experts {
+            ...Expert
+          }
         }
         ... on Stream {
           name
@@ -26,12 +29,18 @@ export const GET_CONTENT_CARDS = gql`
           image {
             ...Image
           }
+          experts {
+            ...Expert
+          }
         }
         ... on Ebook {
           name
           id
           image {
             ...Image
+          }
+          experts {
+            ...Expert
           }
         }
 
@@ -41,13 +50,8 @@ export const GET_CONTENT_CARDS = gql`
           image {
             ...Image
           }
-        }
-
-        ... on LearningPath {
-          name
-          id
-          image {
-            ...Image
+          experts {
+            ...Expert
           }
         }
       }
@@ -56,5 +60,12 @@ export const GET_CONTENT_CARDS = gql`
 
   fragment Image on Image {
     uri
+  }
+
+  fragment Expert on Expert {
+    firstName
+    lastName
+    title
+    company
   }
 `;
