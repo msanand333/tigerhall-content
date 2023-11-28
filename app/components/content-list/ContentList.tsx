@@ -2,6 +2,7 @@ import React from "react";
 import { ContentCard } from "../content-card/ContentCard";
 import { ContentCardApiResponse, ContentListProps } from "./types";
 
+// Functional component representing a content list
 export const ContentList = ({ contentCards }: ContentListProps) => {
   console.log(contentCards);
   return contentCards.map((content: ContentCardApiResponse) => (

@@ -12,6 +12,7 @@ export const App: React.FC = () => {
   const [searchKeywords, setSearchKeywords] = useState("");
   const [getContentCards, { loading, data }] = useLazyQuery(GET_CONTENT_CARDS);
 
+  // useCallback to memoize the handleSearch function
   const handleSearch = React.useCallback(
     (keywords: string) => {
       setSearchKeywords(keywords);
@@ -24,6 +25,7 @@ export const App: React.FC = () => {
     [getContentCards],
   );
 
+  // useEffect for debounce logic of the searchbar
   useEffect(() => {
     const debounceTimer: NodeJS.Timeout = setTimeout(() => {
       handleSearch(searchKeywords);

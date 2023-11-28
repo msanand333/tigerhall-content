@@ -1,5 +1,6 @@
 import { gql } from "@apollo/client";
 
+// GraphQL query for getting content cards
 export const GET_CONTENT_CARDS = gql`
   query GetContentCards($keywords: String) {
     contentCards(
