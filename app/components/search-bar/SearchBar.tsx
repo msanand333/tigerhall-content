@@ -2,10 +2,25 @@
 import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
 import React from 'react';
 import { SearchIcon } from '@chakra-ui/icons';
-export const SearchBar = () => {
-  const [value, setValue] = React.useState('');
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
-    setValue(event.target.value);
+type SearchBarProps = {
+  onSearch: (keywords: string) => void;
+};
+
+export const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+  const [keywords, setKeywords] = React.useState('');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setKeywords(e.target.value);
+  };
+
+  React.useEffect(() => {
+    const debounceTimer = setTimeout(() => {
+      onSearch(keywords);
+    }, 300);
+
+    return () => clearTimeout(debounceTimer);
+  }, [keywords, onSearch]);
+
   return (
     <InputGroup maxW='md' bg='#383733' borderRadius='4px'>
       <InputLeftElement pointerEvents='none'>
@@ -18,8 +33,8 @@ export const SearchBar = () => {
         borderWidth='2px'
         boxSizing='border-box'
         outline='none'
-        value={value}
-        onChange={handleChange}
+        value={keywords}
+        onChange={handleInputChange}
         placeholder='Search here'
         size='md'
       />
