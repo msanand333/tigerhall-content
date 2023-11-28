@@ -1,21 +1,21 @@
 // ContentCard.tsx
-import { Image } from '@chakra-ui/next-js';
+
+import { Image } from '@chakra-ui/react';
 import React from 'react';
 
 type ContentCardProps = {
   name: string;
-  id: string;
-  image: { uri: string };
+  imageUri: string;
 };
 
-const ContentCard: React.FC<ContentCardProps> = ({ name, id, image }) => {
+export const ContentCard: React.FC<ContentCardProps> = ({ name, imageUri }) => {
+  console.log(name, imageUri);
   return (
     <div>
-      <Image src={image.uri} alt={name} />
+      <Image src={imageUri} alt={name} />
+      {/* <img src={imageUri} alt={name} /> */}
       <h3>{name}</h3>
       {/* Add other content details */}
     </div>
   );
 };
-
-export default ContentCard;
