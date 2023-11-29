@@ -4,7 +4,6 @@ import { ContentCardApiResponse, ContentListProps } from "./types";
 
 // Functional component representing a content list
 export const ContentList = ({ contentCards }: ContentListProps) => {
-  console.log(contentCards);
   return contentCards.map((content: ContentCardApiResponse) => (
     <ContentCard
       key={content.id}

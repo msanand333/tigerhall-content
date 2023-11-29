@@ -5,6 +5,7 @@ import { ShareIcon } from "../Icons/ShareIcon";
 import { BookmarkIcon } from "../Icons/BookmarkIcon";
 import { TimeIcon } from "@chakra-ui/icons";
 
+// Functional component representing a content card
 export const ContentCard = (props: ContentCardProps) => {
   const {
     title = "",
